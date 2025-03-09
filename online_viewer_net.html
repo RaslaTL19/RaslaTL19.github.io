@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konsensus Mail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+      color: #FFFFFF;
+      display: flex;
+      height: 100vh;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+    }
+    .sidebar-left {
+      width: 200px;
+      background-color: #1A1A1A;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .sidebar-left h1 {
+      color: #FF6600;
+      font-size: 24px;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+    .sidebar-left button {
+      background-color: #FF6600;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .sidebar-left button:hover {
+      background-color: #CC5200;
+    }
+    .sidebar-left .nav-item {
+      padding: 10px;
+      cursor: pointer;
+    }
+    .sidebar-left .nav-item span {
+      color: #999999;
+    }
+    .sidebar-left .storage {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #999999;
+    }
+    .main-content {
+      flex-grow: 1;
+      padding: 20px;
+      position: relative;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .search-bar input {
+      flex-grow: 1;
+      padding: 5px;
+      background-color: #222222;
+      border: 1px solid #333333;
+      color: #FFFFFF;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .tabs span {
+      padding: 5px 10px;
+      background-color: #222222;
+      border-radius: 4px;
+    }
+    .tabs .active {
+      background-color: #FF6600;
+      color: #FFFFFF;
+    }
+    .email-list {
+      margin-top: 10px;
+    }
+    .email-item {
+      padding: 10px;
+      border-bottom: 1px solid #333333;
+      cursor: pointer;
+    }
+    .email-item:hover {
+      background-color: #222222;
+    }
+    .upgrade {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .upgrade button {
+      background-color: #FF6600;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .upgrade button:hover {
+      background-color: #CC5200;
+    }
+    .sidebar-right {
+      width: 300px;
+      background-color: #1A1A1A;
+      padding: 20px;
+      text-align: center;
+    }
+    .user-info {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info button {
+      background-color: #FF6600;
+      color: #FFFFFF;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .user-info button:hover {
+      background-color: #CC5200;
+    }
+    .right-sidebar {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px;
+      background-color: #1A1A1A;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .right-sidebar span {
+      color: #FF6600;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Venstre Sidebar -->
+    <div class="sidebar-left">
+      <h1>Konsensus</h1>
+      <button>Ny besked</button>
+      <div class="nav-item">Inbox <span>981</span></div>
+      <div class="nav-item">Kladder</div>
+      <div class="nav-item">Sendt</div>
+      <div class="nav-item">Stjernemarkerede</div>
+      <div class="nav-item">Arkiv</div>
+      <div class="nav-item">Spam</div>
+      <div class="nav-item">Papirkurv</div>
+      <div class="nav-item">Alle e-mails <span>981</span></div>
+      <div class="nav-item">Mapper</div>
+      <div class="nav-item">Etiketter</div>
+      <div class="storage">315.98 MB / 1.00 GB <br> 5.05%</div>
+    </div>
+
+    <!-- Hovedindhold -->
+    <div class="main-content">
+      <div class="search-bar">
+        <input type="text" placeholder="Søg beskeder">
+      </div>
+      <div class="tabs">
+        <span class="active">Inbox</span>
+        <span>Alle</span>
+        <span>Læst</span>
+        <span>Ulæst</span>
+        <span>Har vedhæftning</span>
+      </div>
+      <div class="email-list">
+        <div class="email-item">Amazon: Din ordre er sendt <span>13:45</span></div>
+        <div class="email-item">Google: Sikkerhedsadvarsel: Mistænkelig aktivitet opdaget <span>12:30</span></div>
+        <div class="email-item">Netflix: Nye anbefalinger til dig <span>11:15</span></div>
+        <div class="email-item">LinkedIn: Du har nye jobanbefalinger <span>10:00</span></div>
+        <div class="email-item">Facebook: Venskabsanmodninger afventer <span>09:30</span></div>
+      </div>
+      <div class="upgrade">
+        Opgrader for at låse premium-funktioner op. <br>
+        <button>Opgrader</button>
+      </div>
+    </div>
+
+    <!-- Højre Sidebar -->
+    <div class="sidebar-right">
+      <h2>WELCOME User</h2>
+      <p>You have 981 unread conversations in your inbox.</p>
+      <p>Don't have time to tackle an important email now, but don't want to forget about it? Set a better time for it to appear in your inbox. <span style="color: #FF6600;">Show me how</span></p>
+    </div>
+  </div>
+
+  <!-- Top højre hjørne -->
+  <div class="user-info">
+    <span>USER</span>
+    <span>user@example.com</span>
+    <button>Opgrader</button>
+    <span>⚙️</span>
+  </div>
+
+  <!-- Højre vertikal sidebar -->
+  <div class="right-sidebar">
+    <span>📅</span>
+    <span>👥</span>
+    <span>🛡️</span>
+  </div>
+</body>
+</html>
